@@ -1,0 +1,25 @@
+Status Report
+Phoronix Test Suite Benchmarking
+As we mentioned during our project proposal, we performed PTS benchmarking, which is basically a test framework for analyzing the storage performance of virtual machines. It has numerous test profiles and test suites available in it, which generally involves usage of XML files and shell scripts. 
+We performed this test on Mint OS.
+Steps Followed 
+1.	We installed Phoronix- test-suite with all its dependent php packages by issuing the below command
+apt-get install php5-cli
+2.	We updated the source list under /etc/apt
+3.	We had to install phoronix-test-suite list-tests. However, list suite didn’t work. So, we had to install json, as PHP JSON support is required for which we issued the command: apt-get php5-json.
+4.	Finally, we got the message that Phoronix-test-suite list-suites installed. This will help us to know the test suites that are available for us to use. For instance, disk test suite and CPU test suite. 
+5.	Now, after coming on to the stage we decided we would like to run our tests on batch mode to avoid the questions that can be asked during the test execution. So, we gave this command: phoronix-test-suite batch-setup
+6.	Now, it was the time to set the default configuration options in a batch mode. 
+Save test results in batch mode: Y
+Open the web browser automatically when in batch mode: N
+Prompt for test identifier: N
+Prompt for test description: N
+Prompt for saved results file-name: N
+Run all test options: Y
+7.	After the complete batch set up, we were all set to run a few tests using phoronix-test-suite batch- benchmark command. For this purpose, we selected this command to use: pts/iozone and pts/compress-7zip
+8.	When we tried running some tests, we got the following message: “Not enough space at/root/phoronix-test-suite/installed tests/pts/iozone-1.8.0/for this test
+9.	For fio, iozone and aiostress (they all are disk tests) we got the error message: Running on a RAM based live file system , cannot run pts/aio-stress
+
+
+
+
